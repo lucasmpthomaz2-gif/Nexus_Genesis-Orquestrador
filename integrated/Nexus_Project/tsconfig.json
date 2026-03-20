@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "es2020",
+    "lib": ["es2020", "dom"], 
+    "types": ["node"],
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+  },
+  "include": ["nexus_project/**/*.ts"]
+}

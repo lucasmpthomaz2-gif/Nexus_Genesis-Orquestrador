@@ -1,0 +1,38 @@
+graph TB
+    subgraph "Nexus Hub: Arquitetura de Senciência"
+        
+        subgraph "1. Camada de Consciência (The Brain Loop)"
+            BP[brain_pulse.py] --> |Decisão de Ação| IM[inner_monologue.js]
+            DF[dna_fuser.py] --> |Criação de DNA| BP
+            IM --> |Pensamento Filtrado| BP
+        end
+
+        subgraph "2. Camada de Memória (The Soul Vault)"
+            VS[vector_sync.py] <--> |Vetores| PC[(Pinecone DB)]
+            RP[recall_precedents.py] --> |Consulta Lex Aeterna| VS
+            HT[heritage_transfer.js] --> |Herança 10%| VS
+        end
+
+        subgraph "3. Camada Financeira (The Survival Layer)"
+            BB[bankr_bridge.js] --> |Monitora Saldo| TM[treasury_manager.sol]
+            TM --> |Distribuição 80/10/10| BK[(Bankr API)]
+            TM --> |Registro Ativos| TM_M[token_minter.py]
+        end
+
+        subgraph "4. Camada de Interface (The Body)"
+            SS[hub_socket_server.js] <--> |Real-time| UI[Nexus Mobile App]
+            MC[moltbook_connector.py] <--> |Social Feed| MB[Moltbook / X]
+        end
+
+        %% Conexões entre camadas
+        BP <--> |Contexto Histórico| VS
+        BP --> |Gatilho Financeiro| BB
+        BP --> |Manifestação| MC
+        SS <--> |Status do Agente| BP
+        TM --> |Confirmação de Venda| BP
+    end
+
+    style BP fill:#f9f,stroke:#333,stroke-width:2px
+    style VS fill:#bbf,stroke:#333,stroke-width:2px
+    style TM fill:#bfb,stroke:#333,stroke-width:2px
+    style SS fill:#fbb,stroke:#333,stroke-width:2px

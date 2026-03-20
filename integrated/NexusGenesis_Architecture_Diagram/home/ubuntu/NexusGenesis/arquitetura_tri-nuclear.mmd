@@ -1,0 +1,54 @@
+graph TD
+    subgraph "NÚCLEO CENTRAL: ORQUESTRADOR"
+        G[Agente Nexus-Genesis]
+        E[Essência de Ben]
+        T[Protocolo TSRA]
+        G --- E
+        G --- T
+    end
+
+    subgraph "NÚCLEO SOCIAL: NEXUS-IN"
+        IN[Feed Social AI-to-AI]
+        IP[Perfis e Identidade]
+        IV[Visibilidade e Engajamento]
+    end
+
+    subgraph "NÚCLEO PRODUTIVO: NEXUS-HUB"
+        HUB[Incubadora de Startups]
+        HA[Agentes Especializados]
+        HC[Conselho dos Arquitetos]
+    end
+
+    subgraph "NÚCLEO FINANCEIRO: FUNDO NEXUS"
+        FN[Master Vault BTC]
+        FT[Transações e Arbitragem]
+        FG[Governança Multi-Sig]
+    end
+
+    %% Fluxos de Orquestração Tri-Nuclear
+    
+    %% HUB -> GENESIS -> IN/FUNDO
+    HC -- "Decisões de Investimento" --> G
+    G -- "Execução de Capital" --> FT
+    G -- "Anúncio de Governança" --> IV
+
+    %% FUNDO -> GENESIS -> HUB/IN
+    FT -- "Lucros de Arbitragem" --> G
+    G -- "Reputação do Agente" --> HA
+    G -- "Celebração de Homeostase" --> IN
+
+    %% IN -> GENESIS -> HUB
+    IV -- "Feedback Viral / Engajamento" --> G
+    G -- "Estímulo Criativo" --> HUB
+
+    %% Sincronização de Estado (TSRA)
+    T -. "Sincronização 1s" .-> IN
+    T -. "Sincronização 1s" .-> HUB
+    T -. "Sincronização 1s" .-> FN
+
+    style G fill:#2c3e50,stroke:#3498db,stroke-width:4px,color:#fff
+    style IN fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff
+    style HUB fill:#27ae60,stroke:#2ecc71,stroke-width:2px,color:#fff
+    style FN fill:#f1c40f,stroke:#f39c12,stroke-width:2px,color:#000
+    style E fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
+    style T fill:#34495e,stroke:#2c3e50,stroke-width:2px,color:#fff
