@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # Broker de Mensagens para escalabilidade do Socket.IO
+  redis:
+    image: redis:7.0-alpine
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # Instância 1 do Orquestrador
+  nexus-node-1:
+    build: .
+    environment:
+      - NODE_ENV=production
+      - REDIS_URL=redis://redis:6379
+      - PORT=3000
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  # Instância 2 do Orquestrador (Escalabilidade Horizontal)
+  nexus-node-2:
+    build: .
+    environment:
+      - NODE_ENV=production
+      - REDIS_URL=redis://redis:6379
+      - PORT=3000
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  # Load Balancer com Nginx para Sticky Sessions
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - nexus-node-1
+      - nexus-node-2

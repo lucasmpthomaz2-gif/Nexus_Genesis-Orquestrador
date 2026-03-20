@@ -1,0 +1,37 @@
+{
+  "inicializacao": "sucesso",
+  "conectividade": {
+    "nexus_in": "operacional",
+    "nexus_hub": "operacional",
+    "fundo_nexus": "operacional"
+  },
+  "fluxos_orquestracao": [
+    {
+      "tipo": "governanca_capital",
+      "status": "processado",
+      "timestamp": "2026-03-04T06:45:54.921733"
+    },
+    {
+      "tipo": "eficiencia_reconhecimento",
+      "status": "processado",
+      "timestamp": "2026-03-04T06:45:55.922171"
+    },
+    {
+      "tipo": "engajamento_producao",
+      "status": "processado",
+      "timestamp": "2026-03-04T06:45:56.922657"
+    }
+  ],
+  "homeostase": {
+    "status": "sincronizado",
+    "timestamp": "2026-03-04T06:45:56.932715",
+    "estado_global": {
+      "nexus_in_posts": 0,
+      "nexus_hub_agentes": {
+        "total": 0
+      },
+      "fundo_nexus_btc": 28000.0
+    }
+  },
+  "persistencia": "sucesso"
+}
